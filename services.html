@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - Maternal Health</title>
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="main-wrapper">
+   <!-- Sidebar Navigation -->
+   <aside class="sidebar">
+    <h3>Our Services</h3>
+    <ul>
+      <li><a href="#periodTracker">Period Tracker</a></li>
+      <li><a href="#pregnancyTracker">Pregnancy Tracker</a></li>
+      <li><a href="#medicationReminder">Medication Reminder</a></li>
+      <li><a href="#hospitalLocator">Nearby Hospitals & SOS</a></li>
+      <li><a href="#postpartumTracker">Postpartum Health Tracker</a></li>
+      <li><a href="#chatbot">AI Chatbot</a></li>
+      <li><a href="#babyCareServices">Nearby Baby Care Services</a></li>
+      <li><a href="#diet-chart">Personalized Diet Chart</a></li>
+    </ul>
+  </aside>
+
+
+  <main>
+    <section class="hero">
+      <h1>Our AI-Powered Services</h1>
+      <p>Enhancing maternal care through smart tools.</p>
+    </section>
+
+    <!-- Period Tracker Section -->
+    <section id="periodTracker" class="feature-section">
+      <h2>Period Tracker</h2>
+      <p>Predict your next period based on your cycle data.</p>
+      <form id="periodForm">
+        <label for="lastPeriod">Last Period Start Date:</label>
+        <input type="date" id="lastPeriod" required>
+        <br><br>
+        <label for="cycleLength">Average Cycle Length (in days):</label>
+        <input type="number" id="cycleLength" value="28" required>
+        <br><br>
+        <button type="submit" class="tracker-btn">Track</button>
+      </form>
+      <div id="periodResult"></div>
+    </section>
+
+     <!-- Pregnancy Tracker Section -->
+
+    <section id="pregnancyTracker" class="feature-section">
+        <h2>Pregnancy Tracker</h2>
+        <p>Track your baby’s growth and estimated due date. Enter the first day of your last period below:</p>
+      
+        <form id="pregnancyForm">
+          <label for="lastPeriodDate">Last Period Date:</label>
+          <input type="date" id="lastPeriodDate" required />
+          <button type="submit" class="tracker-btn">Calculate Due Date</button>
+        </form>
+      
+        <div id="pregnancyResult" style="margin-top: 15px;"></div>
+      </section>
+
+      <!-- reminder -->
+
+      <section id="medicationReminder" class="feature-section">
+        <h2>Medication & Reminders</h2>
+        <p>Never miss your prenatal vitamins or prescribed medication. Set a reminder below:</p>
+      
+        <form id="medicationForm">
+          <div>
+            <label for="medicationName">Medication Name:</label>
+            <input type="text" id="medicationName" placeholder="e.g. Iron supplement" required />
+          </div>
+          <div>
+            <label for="medicationTime">Reminder Time:</label>
+            <input type="time" id="medicationTime" required />
+          </div>
+          <button type="submit" class="tracker-btn">Set Reminder</button>
+        </form>
+      
+        <div id="medicationOutput" style="margin-top: 15px;"></div>
+      </section>
+
+      <!-- Nearby hospital and SOS -->
+
+      <section id="hospitalLocator" class="feature-section">
+        <h2>Nearby Hospitals & Emergency SOS</h2>
+        <p>Quickly find hospitals near you or send a distress alert when in need.</p>
+      
+        <div class="map-container">
+          <iframe
+            width="100%"
+            height="300"
+            style="border:0; border-radius: 12px;"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/search?key=YOUR_GOOGLE_MAPS_API_KEY&q=Hospitals+near+me">
+          </iframe>
+        </div>
+      
+        <div style="margin-top: 20px;">
+          <button id="sosButton" class="tracker-btn danger-btn">🚨 Send SOS Alert</button>
+          <div id="sosStatus" style="margin-top: 10px;"></div>
+        </div>
+      </section>
+      
+       <!-- postpartum tracker -->
+      <section id="postpartumTracker" class="feature-section">
+        <h2>Postpartum Health Tracker</h2>
+        <p>Track your recovery, emotional well-being, and physical health after childbirth.</p>
+      
+        <form id="postpartumForm">
+          <label>How are you feeling emotionally today?</label>
+          <select id="mood">
+            <option value="happy">😊 Happy</option>
+            <option value="okay">😐 Okay</option>
+            <option value="sad">😢 Sad</option>
+            <option value="anxious">😰 Anxious</option>
+          </select>
+      
+          <label>How is your sleep quality?</label>
+          <select id="sleep">
+            <option value="good">😴 Good</option>
+            <option value="average">😕 Average</option>
+            <option value="poor">😫 Poor</option>
+          </select>
+      
+          <label>How is your physical recovery (e.g., pain, energy)?</label>
+          <select id="recovery">
+            <option value="great">💪 Great</option>
+            <option value="moderate">😌 Moderate</option>
+            <option value="poor">😩 Poor</option>
+          </select>
+      
+          <button type="submit" class="tracker-btn">Log Today's Status</button>
+        </form>
+      
+        <div id="postpartumResult" style="margin-top: 15px;"></div>
+      </section>
+      
+       <!-- Chatbot -->
+      <section id="chatbot" class="feature-section">
+        <h2>AI Chatbot – FAQs & Mental Health</h2>
+        <p>Ask anything related to maternal health, pregnancy, or emotional well-being.</p>
+      
+        <div class="chatbox">
+          <div id="chatLog" class="chat-log"></div>
+          <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your question..." />
+            <button id="sendBtn">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Baby care -->
+
+      <section id="babyCareServices" class="feature-section">
+        <h2>Nearby Baby Care Services</h2>
+        <p>Find baby wellness centers, pediatricians, and baby product stores near you.</p>
+      
+        <div class="map-container">
+          <iframe
+            width="100%"
+            height="300"
+            style="border:0; border-radius: 12px;"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/search?key=YOUR_GOOGLE_MAPS_API_KEY&q=baby+care+services+near+me">
+          </iframe>
+        </div>
+      </section>
+      
+      
+      <section id="diet-chart" class="my-5 p-4 border rounded bg-light">
+        <h2 class="mb-3">🥗 Personalized Diet Chart</h2>
+        <p>
+          Get AI-generated meal plans based on your pregnancy stage, health status, and dietary needs. Our system suggests daily nutrition tailored just for you.
+        </p>
+      
+        <!-- Diet -->
+        <form id="dietForm">
+          <div class="mb-3">
+            <label for="stage" class="form-label">Select Pregnancy Stage</label>
+            <select class="form-select" id="stage" required>
+              <option value="">-- Choose Stage --</option>
+              <option value="pre-pregnancy">Pre-Pregnancy</option>
+              <option value="pregnancy">Pregnancy</option>
+              <option value="postpartum">Postpartum</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="dietType" class="form-label">Diet Preference</label>
+            <select class="form-select" id="dietType" required>
+              <option value="">-- Choose Diet Type --</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="non-vegetarian">Non-Vegetarian</option>
+              <option value="vegan">Vegan</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Generate Diet Chart</button>
+        </form>
+      
+        <!-- Result Display -->
+        <div id="dietResult" class="mt-4 p-3 bg-white border rounded d-none">
+          <h5>Your Personalized Diet Chart</h5>
+          <p><em>(AI-generated meal plan will appear here)</em></p>
+          <ul id="dietList"></ul>
+        </div>
+      </section>
+      
+      
+
+    <!-- More features will go here (Pregnancy Tracker, Diet Chart, etc.) -->
+
+  </main>
+</div>
+  <footer>
+    <p>&copy; 2025 माँ-𝔼𝕋𝔼ℝℕ𝔸𝕃. All rights reserved.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

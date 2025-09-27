@@ -10,7 +10,7 @@ Whether you're tracking cycles, navigating pregnancy, or simply focusing on well
 
 
 ## 🚀 Live Demo
-🔗 [Visit Ma-Eternal]([https://your-live-link-here.com](https://ma-eternal.vercel.app/))  
+🔗 [Visit Ma-Eternal](https://ma-eternal.vercel.app/)  
 *(Currently in progress — core modules under development)*  
 
 ---
